@@ -1,0 +1,10 @@
+[Unit]
+Description=Start VBAN Script on Startup
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 10
+ExecStart=/bin/bash /path/to/start_vban.sh
+
+[Install]
+WantedBy=multi-user.target

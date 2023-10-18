@@ -18,6 +18,8 @@ Before getting started with implementing the automatic VBAN stream detection scr
 
 # Setting Up
 
+On your VBAN Transmitter, pick and remember a stream name. In my example, my stream is "StereoPi", correlating with the blog. You will have to change the scripts to account for whatever the name is. This repository may eventually have a bash script to help you with this change. Stay posted.
+
 ## Update/Upgrade repositories:
 
 ```bash
@@ -57,7 +59,7 @@ sudo pip install scapy
 python3 ./vban.py
 ```
 
-## Automatic Startup Services
+## Automatic Startup Services:
 
 To ensure the VBAN receiver starts on boot, we'll set up a systemd service:
 
@@ -92,7 +94,25 @@ sudo systemctl enable vbanstart.service
 
 You can also use ``systemctl start`` or ``systemctl stop``.
 
+
+Script to Manually Change Stream IP:
+You can use the update_ip.sh script to manually enter a stream IP if one was not automatically found or if you prefer a different stream source:
+
+Make the script executable:
+
+```bash
+sudo chmod +x update_ip.sh
+```
+
+Run the script
+```bash
+sudo ./update_ip.sh
+```
+
+Enter the desired IP address when prompted. Wait for the service to restart.
+
 ---
+
 ## Understanding the Script
 
 - `vban.py`: This script uses the `scapy` library to detect VBAN audio streams. It listens for UDP packets on port 6980 and executes actions when a stream is detected. It finds the stream with TCPDump.
