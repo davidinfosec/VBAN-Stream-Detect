@@ -4,7 +4,7 @@
 
 This tutorial guides you through setting up a Python script to detect VBAN audio streams. VBAN is a protocol for streaming audio over a network, commonly used in audio production setups.
 
-Before getting started with implementing the automatic VBAN stream detection detection script, please consider following along from this blog post, published by Stanley Solutions' Blog. https://blog.stanleysolutionsnw.com/networked-audio-using-vban-and-rpi.html -- His blog post is well deserved of a majority of credit. I have added on some minor tweaks but his work is phenomenal and this repository is built majorly off of his post to modify some things for quality of life and automating tasks.
+Before getting started with implementing the automatic VBAN stream detection script, please consider following along from this blog post, published by Stanley Solutions' Blog. https://blog.stanleysolutionsnw.com/networked-audio-using-vban-and-rpi.html -- His blog post is well deserved of a majority of credit. I have added on some minor tweaks but his work is phenomenal and this repository is built majorly off of his post to modify some things for quality of life and automating tasks.
 
 ---
 ## Requirements
@@ -32,22 +32,22 @@ Install Python3
 sudo apt-get install Python3 -y
 ```
 
-2. **Python Libraries**:
+**Python Libraries**:
     - Install the required Python libraries using pip:
 
     ```bash
     pip install scapy
     ```
 
-3. **Download Scripts**:
+**Download Scripts**:
     - vban.py
     - start_vban.sh
 
-4. **Download Services**:
+**Download Services**:
     - vbanstart.service
 ## Running the Script
 
-1. **VBAN Stream Detection**:
+**VBAN Stream Detection**:
     - Run the `vban.py` script:
 
     ```bash
@@ -64,7 +64,7 @@ To ensure the VBAN receiver starts on boot, we'll set up a systemd service:
    sudo nano /etc/systemd/system/vbanstart.service
 ```
 
-Paste the following content into the file, then save and exit:
+Paste the following content into the file, then save and exit: (Alternatively you can download and copy the service from this repository into the destination)
 
 ```
 [Unit]
