@@ -121,6 +121,9 @@ Enter the desired IP address when prompted. Wait for the service to restart.
 
 - **Library Installation**:
     - Ensure you have installed the required library (`scapy`) using the correct Python environment.
+ 
+- **Not working on restart**:
+    - If not working on restart, try adding some sleep time on the service before it starts. The network devices may need time to come up and propogate an IP address before TCPDump can start looking for VBAN packets. 
 
 ## Conclusion
 
