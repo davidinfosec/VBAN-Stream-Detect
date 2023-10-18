@@ -6,7 +6,7 @@ The scripts in this repository are additional, created with the intention of enh
 
 My script aims to build off Stanley's approach of facilitating a VBAN Audio stream from a remote transmission to a Raspberry Pi/Linux device. 
 
-The higlighted enhancements of my project include:
+The highlighted enhancements of my project include:
 - A more efficient means of obtaining an IP address for the target stream:
     This means that after initial setup, it should be purely plug and play. You power the device (Raspberry Pi) on, and it finds the network stream (from a Desktop Computer, in my case). The largest        benefit to this is that DHCP won't be able to mess things up if your IP addresses frequently change. You should only have to set the stream on your transmission device, which involves knowing the       IP address of the Raspberry Pi/Linux device, but the Linux device will use TCPDump to identify the stream transmission over a certain port number, locating the right IP address and taking out the       guess work.
 
