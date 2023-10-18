@@ -91,7 +91,6 @@ sudo systemctl enable vbanstart.service
 
 This will start the VBAN receiver service on boot.
 
----
 ## Understanding the Script
 
 - `vban.py`: This script uses the `scapy` library to detect VBAN audio streams. It listens for UDP packets on port 6980 and executes actions when a stream is detected. It finds the stream with TCPDump.
