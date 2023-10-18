@@ -135,3 +135,5 @@ Enter the desired IP address when prompted. Wait for the service to restart.
 ## Conclusion
 
 With this setup, you can automate tasks based on the presence of a VBAN audio stream. This can be extended to perform various actions based on different audio inputs.
+
+If you found this useful, consider [donating](https://www.buymeacoffee.com/reportname) toward my other projects, like [ReportName.com](https://ReportName.com) - a platform that provides an organized approach to reporting cybercrime. https://www.buymeacoffee.com/reportname
