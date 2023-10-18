@@ -1,3 +1,3 @@
 #!/bin/bash
-/usr/bin/python3 /home/david/vban.py >> /home/david/vban.log 2>&1
+/usr/bin/python3 /path/to/vban.py >> /path/to/vban.log 2>&1
 
