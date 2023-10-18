@@ -16,9 +16,9 @@ Before getting started with implementing the automatic VBAN stream detection scr
 - Python3
 - Scapy, Python Library
 
-## Setting Up
+# Setting Up
 
-Update/Upgrade repositories:
+## Update/Upgrade repositories:
 
 ```bash
 sudo apt-get update && sudo apt-get upgrade -y
