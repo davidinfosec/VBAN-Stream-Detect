@@ -4,9 +4,8 @@
 
 This tutorial guides you through setting up a Python script to detect VBAN audio streams. VBAN is a protocol for streaming audio over a network, commonly used in audio production setups.
 
-Before getting started with implementing the automatic VBAN stream detection script, please consider following along from this blog post, published by Stanley Solutions' Blog. https://blog.stanleysolutionsnw.com/networked-audio-using-vban-and-rpi.html -- His blog post is well deserved of a majority of credit. I have added on some minor tweaks but his work is phenomenal and this repository is built majorly off of his post to modify some things for quality of life and automating tasks.
+Before getting started with implementing the automatic VBAN stream detection script, please consider following along from this [blog post](https://blog.stanleysolutionsnw.com/networked-audio-using-vban-and-rpi.html), published by Stanley Solutions' Blog. His blog post is well deserved of a majority of credit. I have added on some minor tweaks but his work is phenomenal and this repository is built majorly off of his post to modify some things for quality of life and automating tasks.
 
----
 ## Requirements
 
 - Raspberry Pi (or similar device), will be receiving the audio
@@ -16,43 +15,47 @@ Before getting started with implementing the automatic VBAN stream detection scr
 - TCPDump
 - Python3
 - Scapy, Python Library
+
 ## Setting Up
 
 Update/Upgrade repositories:
-``sudo apt-get update && sudo apt-get upgrade -y``
 
-Install TCPDump:
-
+```bash
+sudo apt-get update && sudo apt-get upgrade -y
 ```
+
+## Install TCPDump
+
+```bash
 sudo apt-get install TCPDump -y
 ```
 
-Install Python3
-```
+## Install Python3
+
+```bash
 sudo apt-get install Python3 -y
 ```
 
-**Python Libraries**:
-    - Install the required Python libraries using pip:
+## Install Python Libraries
 
-    ```bash
-    pip install scapy
-    ```
+```bash
+sudo pip install scapy
+```
 
-**Download Scripts**:
-    - vban.py
-    - start_vban.sh
+## Download Scripts
+- vban.py
+- start_vban.sh
+## Download Services
+- vbanstart.service
 
-**Download Services**:
-    - vbanstart.service
 ## Running the Script
 
 **VBAN Stream Detection**:
     - Run the `vban.py` script:
 
-    ```bash
-    python3 ./vban.py
-    ```
+```bash
+python3 ./vban.py
+```
 
 ## Automatic Startup Services
 
@@ -60,13 +63,13 @@ To ensure the VBAN receiver starts on boot, we'll set up a systemd service:
 
 1. **Create a Service File**:
    - Open a terminal and run the following command to create a new service file:
-   ```bash
-   sudo nano /etc/systemd/system/vbanstart.service
+```bash
+sudo nano /etc/systemd/system/vbanstart.service
 ```
 
 Paste the following content into the file, then save and exit: (Alternatively you can download and copy the service from this repository into the destination)
 
-```
+```bash
 [Unit]
 Description=Start VBAN Script on Startup
 
@@ -81,16 +84,15 @@ WantedBy=multi-user.target
 
 Replace ``/path/to/vban.py`` with the actual path to your vban.py script.
 
-Enable the Service:
+## Enable The Service:
 
-Run the following command to enable the service:
-
-```
+```bash
 sudo systemctl enable vbanstart.service
 ```
 
-This will start the VBAN receiver service on boot.
+You can also use ``systemctl start`` or ``systemctl stop``.
 
+---
 ## Understanding the Script
 
 - `vban.py`: This script uses the `scapy` library to detect VBAN audio streams. It listens for UDP packets on port 6980 and executes actions when a stream is detected. It finds the stream with TCPDump.
