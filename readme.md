@@ -18,7 +18,7 @@ Before getting started with implementing the automatic VBAN stream detection scr
 
 # Setting Up
 
-On your VBAN Transmitter, pick and remember a stream name. In my example, my stream is "StereoPi", correlating with the blog. You will have to change the scripts to account for whatever the name is. This repository may eventually have a bash script to help you with this change. Stay posted.
+On your VBAN Transmitter, pick and remember a stream name. In my example, my stream is "StereoPi", correlating with the blog post mentioned above from Stanley Solutions. You will have to change the scripts to account for whatever the name is. This repository may eventually have a bash script to help you with this change. Stay posted.
 
 ## Update/Upgrade repositories:
 
