@@ -2,9 +2,16 @@
 
 ## Introduction
 
-This tutorial guides you through setting up a Python script to detect VBAN audio streams. VBAN is a protocol for streaming audio over a network, commonly used in audio production setups.
+The scripts in this repository are additional, created with the intention of enhancing a set up from the [blog post](https://blog.stanleysolutionsnw.com/networked-audio-using-vban-and-rpi.html) by Stanley Solutions. I highly recommend you to follow through his process before continuing with the steps mentioned below. He describes what VBAN is, initial setup with Voicemeeter/VBAN capable software, and gets you up to speed with the initial set-up.
 
-Before getting started with implementing the automatic VBAN stream detection script, please consider following along from this [blog post](https://blog.stanleysolutionsnw.com/networked-audio-using-vban-and-rpi.html), published by Stanley Solutions' Blog. His blog post is well deserved of a majority of credit. I have added on some minor tweaks but his work is phenomenal and this repository is built majorly off of his post to modify some things for quality of life and automating tasks.
+My script aims to build off Stanley's approach of facilitating a VBAN Audio stream from a remote transmission to a Raspberry Pi/Linux device. 
+
+The higlighted enhancements of my project include:
+- A more efficient means of obtaining an IP address for the target stream:
+    This means that after initial setup, it should be purely plug and play. You power the device (Raspberry Pi) on, and it finds the network stream (from a Desktop Computer, in my case). The largest        benefit to this is that DHCP won't be able to mess things up if your IP addresses frequently change. You should only have to set the stream on your transmission device, which involves knowing the       IP address of the Raspberry Pi/Linux device, but the Linux device will use TCPDump to identify the stream transmission over a certain port number, locating the right IP address and taking out the       guess work.
+
+- Ability to statically assign an IP address if a stream is not available or unable to be automatically located:
+    With the update_ip shell script in this project, you will be able to manually provide an IP address without having to fuss with services or long, hard to memorize, commands. There may also be           scripts added in the future to assist with editing command parameters. Currently the command is hardcoded to play out of the default device, with Alsa, at the highest latency.
 
 ## Requirements
 
