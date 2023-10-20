@@ -139,3 +139,4 @@ With this setup, you can automate tasks based on the presence of a VBAN audio st
 If you found this useful, consider [donating](https://www.buymeacoffee.com/reportname) toward my other projects, like [ReportName.com](https://ReportName.com) - a platform that provides an organized approach to reporting cybercrime. https://www.buymeacoffee.com/reportname
 
 Blog @ [DavidInfosec.com](https://davidinfosec.com)
+More info on this script: https://davidinfosec.com/post/audio-networking-project/
